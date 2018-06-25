@@ -1,14 +1,21 @@
 import Vue from 'vue';
-
-import HelloWorld from './components/HelloWorld';
-
+import router from 'vue-router';
+import Home from './components/Home';
+import Vuetify from 'vuetify';
 
 import './styles';
 
-// Uncommment the following to see NativeScript-Vue output logs
-//Vue.config.silent = false;
+Vue.use(Vuetify, {
+  theme: {
+    primary: '#3f51b5',
+    secondary: '#b0bec5',
+    accent: '#8c9eff',
+    error: '#b71c1c'
+  },
+});
 
 new Vue({
   el: '#app',
-  render: h => h(HelloWorld),
+  router,
+  render: h => h(Home),
 });
